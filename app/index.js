@@ -1,5 +1,7 @@
 // var $ = require('jquery');
-require('../index.html')
+if (process.env.NODE_ENV !== 'production') {
+  require('./index.html')
+}
 var moment = require('moment');
 
 require('../style/main.less');
