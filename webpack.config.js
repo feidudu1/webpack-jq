@@ -35,6 +35,10 @@ module.exports = {
             {
                 test: /\.(png|jpg)$/,
                 loader: 'url-loader?limit=40000'
+            },
+            {
+                test: /\.html$/,
+                loader: "raw-loader" // loaders: ['raw-loader'] is also perfectly acceptable.
             }
         ]
     },

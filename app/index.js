@@ -1,4 +1,5 @@
 // var $ = require('jquery');
+require('../index.html')
 var moment = require('moment');
 
 require('../style/main.less');
