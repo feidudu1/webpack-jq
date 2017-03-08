@@ -10,4 +10,4 @@ app.appendChild(sub());
 
 // 将下面js改为jq
 // document.body.appendChild(app);
-$('body').append('<p>look st me ! wenow is' +moment().format() + '</p>');
+$('body').append('<p>s' +moment().format() + '</p>');

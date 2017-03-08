@@ -8,7 +8,7 @@ var STYLE_PATH = path.resolve(ROOT_PATH, 'style');
 
 module.exports = {
     devtool: 'source-map',  //方便打包的文件查错，该参数只能用于开发环境，生产环境要换一个参数
-    // watch: true,
+    watch: true,
     // watchOptions: {
     //     poll: true
     // },  //实时监听,不能实现hot replace，比较慢
@@ -19,12 +19,11 @@ module.exports = {
         path: BUILD_PATH,
         filename: 'bundle.js'
     },
-
     devServer: {
         historyApiFallback: true,
-        hot: true,
+        // hot: true,
         inline: true,
-        progress: true
+        progress: true,
     },
     module: {
         loaders: [
@@ -40,12 +39,12 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
         new webpack.ProvidePlugin({  //使用本插件可以不必在每个js文件中require一次jquery
             $: "jquery",
             jQuery: "jquery",
             "window.jQuery": "jquery"
         }),
-        // new webpack.HotModuleReplacementPlugin()
 
     ]
 };
